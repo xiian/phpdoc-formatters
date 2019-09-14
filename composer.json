@@ -1,0 +1,60 @@
+{
+    "name": "xiian/phpdoc-formatters",
+    "type": "library",
+    "description": "Collection of formatters for PHPDocs.",
+    "keywords": [
+        "phpdoc",
+        "formatter"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tom Sartain",
+            "email": "tomsartain@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2"
+    },
+    "require-dev": {
+        "liip/rmt": "^1.5",
+        "mockery/mockery": "^1.2",
+        "pds/skeleton": "^1.0",
+        "phpunit/phpunit": "^7 || ^8"
+    },
+    "autoload": {
+        "psr-4": {
+            "xiian\\PHPDocFormatters\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "xiian\\PHPDocFormatters\\test\\": "tests/"
+        }
+    },
+    "scripts": {
+        "build-all": [
+            "@clean",
+            "@build-prepare",
+            "@static-analysis",
+            "@test",
+            "@docs"
+        ],
+        "build-phpcs": "phpcs src/ --report-xml=build/phpcs.xml --report-checkstyle=build/checkstyle.xml || true",
+        "build-phpdox": "phpdox",
+        "build-phploc": "phploc --log-xml=build/phploc.xml src/",
+        "build-phpunit": "phpunit",
+        "build-prepare": "mkdir build docs",
+        "clean": "rm -rf build docs",
+        "docs": [
+            "@build-phpdox"
+        ],
+        "static-analysis": [
+            "@build-phploc",
+            "@build-phpcs"
+        ],
+        "test": [
+            "@build-phpunit"
+        ]
+    }
+}
