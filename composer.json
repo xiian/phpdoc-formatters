@@ -14,7 +14,8 @@
         }
     ],
     "require": {
-        "php": ">=7.2"
+        "php": ">=7.2",
+        "phpdocumentor/reflection-docblock": "^4.3"
     },
     "require-dev": {
         "liip/rmt": "^1.5",
