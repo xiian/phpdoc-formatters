@@ -65,7 +65,7 @@ class AlignBetterFormatter implements Formatter
         $description = '';
         if ($tag instanceof BaseTag && $tag->getDescription()) {
             $description = (string) $tag->getDescription();
-            $tagString   = preg_replace('/\s*' . preg_quote($description) . '$/', '', $tagString);
+            $tagString   = preg_replace('/\s*' . preg_quote($description, '/') . '$/', '', $tagString);
         }
 
         $parts = explode(' ', $tagString);
