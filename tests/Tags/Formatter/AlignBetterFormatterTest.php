@@ -150,6 +150,7 @@ class AlignBetterFormatterTest extends TestCase
         $r['Method - Static']          = [['static', 'array', 'methodName()', 'Custom Description'], new Method('methodName', [], $this->type, true, $this->description)];
         $r['Method - Not Static']      = [['', 'array', 'methodName()', 'Custom Description'], new Method('methodName', [], $this->type, false, $this->description)];
         $r['Method - With Parameters'] = [['', 'array', 'methodName(array $paramName, array $paramName2)', 'Custom Description'], new Method('methodName', $this->argumentsMultiple, $this->type, false, $this->description)];
+        $r['With Slashes']             = [['', '', '', 'Something with / slashes'], new Generic('generic', new Description('Something with / slashes'))];
         return $r;
     }
 
