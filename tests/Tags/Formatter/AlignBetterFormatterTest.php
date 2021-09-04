@@ -59,72 +59,71 @@ class AlignBetterFormatterTest extends TestCase
         $this->setUpForProviders();
 
         $map = [
-            '@param                       $paramName                                      Custom Description' => new Param('paramName', null, false, $this->description),
-            '@param                       $paramName'                                                         => new Param('paramName'),
-            '@param                       ...$paramName                                   Custom Description' => new Param('paramName', null, true, $this->description),
-            '@param                       ...$paramName'                                                      => new Param('paramName', null, true),
-            '@param                 array $paramName                                      Custom Description' => new Param('paramName', $this->type, false, $this->description),
-            '@param                 array $paramName'                                                         => new Param('paramName', $this->type),
-            '@param                 array ...$paramName                                   Custom Description' => new Param('paramName', $this->type, true, $this->description),
-            '@param                 array ...$paramName'                                                      => new Param('paramName', $this->type, true),
+            '@param                             $paramName                                      Custom Description' => new Param('paramName', null, false, $this->description),
+            '@param                             $paramName'                                                         => new Param('paramName'),
+            '@param                             ...$paramName                                   Custom Description' => new Param('paramName', null, true, $this->description),
+            '@param                             ...$paramName'                                                      => new Param('paramName', null, true),
+            '@param                       array $paramName                                      Custom Description' => new Param('paramName', $this->type, false, $this->description),
+            '@param                       array $paramName'                                                         => new Param('paramName', $this->type),
+            '@param                       array ...$paramName                                   Custom Description' => new Param('paramName', $this->type, true, $this->description),
+            '@param                       array ...$paramName'                                                      => new Param('paramName', $this->type, true),
 
-            '@property                    $propertyName                                   Custom Description' => new Property('propertyName', null, $this->description),
-            '@property                    $propertyName'                                                      => new Property('propertyName'),
-            '@property              array $propertyName                                   Custom Description' => new Property('propertyName', $this->type, $this->description),
-            '@property              array $propertyName'                                                      => new Property('propertyName', $this->type),
+            '@property                          $propertyName                                   Custom Description' => new Property('propertyName', null, $this->description),
+            '@property                          $propertyName'                                                      => new Property('propertyName'),
+            '@property                    array $propertyName                                   Custom Description' => new Property('propertyName', $this->type, $this->description),
+            '@property                    array $propertyName'                                                      => new Property('propertyName', $this->type),
 
-            '@property-read               $propertyName                                   Custom Description' => new PropertyRead('propertyName', null, $this->description),
-            '@property-read               $propertyName'                                                      => new PropertyRead('propertyName'),
-            '@property-read         array $propertyName                                   Custom Description' => new PropertyRead('propertyName', $this->type, $this->description),
-            '@property-read         array $propertyName'                                                      => new PropertyRead('propertyName', $this->type),
+            '@property-read                     $propertyName                                   Custom Description' => new PropertyRead('propertyName', null, $this->description),
+            '@property-read                     $propertyName'                                                      => new PropertyRead('propertyName'),
+            '@property-read               array $propertyName                                   Custom Description' => new PropertyRead('propertyName', $this->type, $this->description),
+            '@property-read               array $propertyName'                                                      => new PropertyRead('propertyName', $this->type),
 
-            '@property-write              $propertyName                                   Custom Description' => new PropertyWrite('propertyName', null, $this->description),
-            '@property-write              $propertyName'                                                      => new PropertyWrite('propertyName'),
-            '@property-write        array $propertyName                                   Custom Description' => new PropertyWrite('propertyName', $this->type, $this->description),
-            '@property-write        array $propertyName'                                                      => new PropertyWrite('propertyName', $this->type),
+            '@property-write                    $propertyName                                   Custom Description' => new PropertyWrite('propertyName', null, $this->description),
+            '@property-write                    $propertyName'                                                      => new PropertyWrite('propertyName'),
+            '@property-write              array $propertyName                                   Custom Description' => new PropertyWrite('propertyName', $this->type, $this->description),
+            '@property-write              array $propertyName'                                                      => new PropertyWrite('propertyName', $this->type),
 
-            '@method                array methodName()                                    Custom Description' => new Method('methodName', [], $this->type, false, $this->description),
-            '@method                array methodName()'                                                       => new Method('methodName', [], $this->type),
-            '@method                array methodName(array $paramName)                    Custom Description' => new Method('methodName', $this->argumentsSingle, $this->type, false, $this->description),
-            '@method                array methodName(array $paramName)'                                       => new Method('methodName', $this->argumentsSingle, $this->type),
-            '@method                void  methodName()                                    Custom Description' => new Method('methodName', [], null, false, $this->description),
-            '@method                void  methodName()'                                                       => new Method('methodName'),
-            '@method                void  methodName(array $paramName)                    Custom Description' => new Method('methodName', $this->argumentsSingle, null, false, $this->description),
-            '@method                void  methodName(array $paramName)'                                       => new Method('methodName', $this->argumentsSingle),
-            '@method                void  methodName(array $paramName, array $paramName2)'                    => new Method('methodName', $this->argumentsMultiple),
-            '@method         static array methodName()                                    Custom Description' => new Method('methodName', [], $this->type, true, $this->description),
-            '@method         static array methodName()'                                                       => new Method('methodName', [], $this->type, true),
-            '@method         static array methodName(array $paramName)'                                       => new Method('methodName', $this->argumentsSingle, $this->type, true),
-            '@method         static void  methodName()                                    Custom Description' => new Method('methodName', [], null, true, $this->description),
-            '@method         static void  methodName()'                                                       => new Method('methodName', [], null, true),
-            '@method         static void  methodName(array $paramName)                    Custom Description' => new Method('methodName', $this->argumentsSingle, null, true, $this->description),
-            '@method         static void  methodName(array $paramName)'                                       => new Method('methodName', $this->argumentsSingle, null, true),
+            '@method                      array methodName()                                    Custom Description' => new Method('methodName', [], $this->type, false, $this->description),
+            '@method                      array methodName()'                                                       => new Method('methodName', [], $this->type),
+            '@method                      array methodName(array $paramName)                    Custom Description' => new Method('methodName', $this->argumentsSingle, $this->type, false, $this->description),
+            '@method                      array methodName(array $paramName)'                                       => new Method('methodName', $this->argumentsSingle, $this->type),
+            '@method                      void  methodName()                                    Custom Description' => new Method('methodName', [], null, false, $this->description),
+            '@method                      void  methodName()'                                                       => new Method('methodName'),
+            '@method                      void  methodName(array $paramName)                    Custom Description' => new Method('methodName', $this->argumentsSingle, null, false, $this->description),
+            '@method                      void  methodName(array $paramName)'                                       => new Method('methodName', $this->argumentsSingle),
+            '@method                      void  methodName(array $paramName, array $paramName2)'                    => new Method('methodName', $this->argumentsMultiple),
+            '@method         static       array methodName()                                    Custom Description' => new Method('methodName', [], $this->type, true, $this->description),
+            '@method         static       array methodName()'                                                       => new Method('methodName', [], $this->type, true),
+            '@method         static       array methodName(array $paramName)'                                       => new Method('methodName', $this->argumentsSingle, $this->type, true),
+            '@method         static       void  methodName()                                    Custom Description' => new Method('methodName', [], null, true, $this->description),
+            '@method         static       void  methodName()'                                                       => new Method('methodName', [], null, true),
+            '@method         static       void  methodName(array $paramName)                    Custom Description' => new Method('methodName', $this->argumentsSingle, null, true, $this->description),
+            '@method         static       void  methodName(array $paramName)'                                       => new Method('methodName', $this->argumentsSingle, null, true),
 
-            '@author                      My Name <my.name@example.com>'                                       => new Author('My Name', 'my.name@example.com'),
-            '@covers                      \Fqsen                                          Custom Description'  => new Covers(new Fqsen('\\Fqsen'), $this->description),
-            '@deprecated                  1.2.3                                           Custom Description'  => new Deprecated('1.2.3', $this->description),
-            '@example                     example1.php                                    Example Description' => new Example('example1.php', false, 37, 42, 'Example Description'),
-            '@generic                                                                     Custom Description'  => new Generic('generic', $this->description),
-            '@link                        linkystring                                     Custom Description'  => new Link('linkystring', $this->description),
-            '@return                      array                                           Custom Description'  => new Return_($this->type, $this->description),
-            '@see                         example1.php                                    Custom Description'  => new See(new Url('example1.php'), $this->description),
-            '@since                       1.2.3                                           Custom Description'  => new Since('1.2.3', $this->description),
-            '@source                3     13                                              Custom Description'  => new Source(3, 13, $this->description),
-            '@throws                      \Exception                                      Custom Description'  => new Throws(new Object_(new Fqsen('\Exception')), $this->description),
-            '@uses                        \Fqsen                                          Custom Description'  => new Uses(new Fqsen('\\Fqsen'), $this->description),
-            '@var                   array $varName                                        Custom Description'  => new Var_('varName', $this->type, $this->description),
-            '@version                     1.2.3                                           Custom Description'  => new Version('1.2.3', $this->description),
+            '@author                            My Name <my.name@example.com>'                                       => new Author('My Name', 'my.name@example.com'),
+            '@covers                            \Fqsen                                          Custom Description'  => new Covers(new Fqsen('\\Fqsen'), $this->description),
+            '@deprecated                        1.2.3                                           Custom Description'  => new Deprecated('1.2.3', $this->description),
+            '@example        example1.php 37    42                                              Example Description' => new Example('example1.php', false, 37, 42, 'Example Description'),
+            '@generic                                                                           Custom Description'  => new Generic('generic', $this->description),
+            '@link                              linkystring                                     Custom Description'  => new Link('linkystring', $this->description),
+            '@return                            array                                           Custom Description'  => new Return_($this->type, $this->description),
+            '@see                               example1.php                                    Custom Description'  => new See(new Url('example1.php'), $this->description),
+            '@since                             1.2.3                                           Custom Description'  => new Since('1.2.3', $this->description),
+            '@source                      3     13                                              Custom Description'  => new Source(3, 13, $this->description),
+            '@throws                            \Exception                                      Custom Description'  => new Throws(new Object_(new Fqsen('\Exception')), $this->description),
+            '@uses                              \Fqsen                                          Custom Description'  => new Uses(new Fqsen('\\Fqsen'), $this->description),
+            '@var                         array $varName                                        Custom Description'  => new Var_('varName', $this->type, $this->description),
+            '@version                           1.2.3                                           Custom Description'  => new Version('1.2.3', $this->description),
         ];
 
         // Get all the tags
         $tags = array_values($map);
 
         // Format into expected format
-        $r = [];
         foreach ($map as $expect => $tag) {
-            $r[get_class($tag) . '-' . spl_object_id($tag)] = [$expect, $tags, $tag];
+            $k = get_class($tag) . '-' . spl_object_id($tag);
+            yield $k => [$expect, $tags, $tag];
         }
-        return $r;
     }
 
     /**
